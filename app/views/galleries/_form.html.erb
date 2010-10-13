@@ -1,0 +1,9 @@
+<% form_for @gallery do |form| %>
+	<p>
+		<%= form.label :title, "Nom de la galerie" %><br />
+		<%= form.text_field :title %>
+	</p>
+	<p>
+		<%= form.submit "Valider" %>
+	</p>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if current_user %>
+  <p><%= link_to 'Déconnexion', destroy_user_session_path %></p>
+<% else %>
+  <p><%= link_to 'Connexion', new_user_session_path %></p>
+<% end %>
+
+<% @news.each do |news| %>
+  <div class="news">
+    <h2><%= news.title %></h2>
+    <p><small><%= news.posted_at %></small></p>
+    <%= home_news(news) %>
+    <%= comments_links(news) %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<%= form_for @preregistration do |form| %>
+	<p><%= form.label :first_name, "Prénom" %><br />
+	<%= form.text_field :first_name %></p>
+	<p><%= form.label :last_name, "Nom de famille" %><br />
+	<%= form.text_field :last_name %></p>
+	
+	<p><%= form.submit "Valider" %></p>
+<% end %>
