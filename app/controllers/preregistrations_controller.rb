@@ -18,6 +18,7 @@ class PreregistrationsController < ApplicationController
     else
       flash[:error] = "Une erreur s'est produite lors de votre préinscription. Merci de bien renseigner tous les champs du formulaire"
       render :action => :new
+    end
   end
   
   def edit
