@@ -1,6 +1,6 @@
 class Picture
   include Mongoid::Document
-  include Paperclip
+  require "paperclip"
   
   embedded_in :gallery, :inverse_of => :pictures
   field :picture_file_name
