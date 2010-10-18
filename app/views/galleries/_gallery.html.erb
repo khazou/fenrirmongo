@@ -1,1 +1,1 @@
-<li><%= link_to image_tag(gallery.picture.url(:mini)), gallery.picture.url %></li>
+<li><%= image_tag gallery.picture.mini.url %><%= link_to "Mouahaha", gallery_picture_url(gallery.gallery, gallery), :method => :delete if current_user and current_user.admin? %></li>

@@ -19,7 +19,7 @@ class PicturesController < ApplicationController
   end
   
   def destroy
-    @picture = Picture.find(params[:id])
+    @picture = Picture.where(:_id => params[:id]).first
     if @picture.destroy
       flash[:notice] = "Photo supprimée"
     else

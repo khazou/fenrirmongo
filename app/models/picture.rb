@@ -1,10 +1,12 @@
+require 'app/uploaders/picture_uploader'
+require 'carrierwave/orm/mongoid'
+
 class Picture
   include Mongoid::Document
-  require "paperclip"
+  
+  field :picture
+  mount_uploader :picture, PictureUploader
   
   embedded_in :gallery, :inverse_of => :pictures
-  field :picture_file_name
-  field :picture_content_type
-  field :picture_updated_at
-  has_attached_file :picture, :styles => {:mini => "200x150#"}
+
 end
