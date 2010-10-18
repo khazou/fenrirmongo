@@ -1,6 +1,6 @@
 class PreregistrationsController < ApplicationController
   before_filter :require_user
-  before_filter :require_admin, :only => [:index, :destroy, :validate, :add_payment]
+  before_filter :require_admin, :only => [:index, :destroy, :admin_edit, :admin_update, :validate, :add_payment]
   
   def index
     @preregistrations = Preregistration.all
@@ -12,6 +12,7 @@ class PreregistrationsController < ApplicationController
   
   def create
     @preregistration = Preregistration.new(params[:preregistration])
+    @preregistration.user = current_user
     if @preregistration.save!
       flash[:notice] = "Vous vous êtes correctement préinscrit. Une réponse vous sera donnée dans les plus brefs délais."
       redirect_to @preregistration
@@ -22,10 +23,18 @@ class PreregistrationsController < ApplicationController
   end
   
   def edit
+    @preregistration = current_user.preregistration
+  end
+  
+  def admin_edit
     @preregistration = Preregistration.find(params[:id])
   end
   
   def update
+    @preregistration = current_user.preregistration
+  end
+  
+  def admin_update
     @preregistration = Preregistration.find(params[:id])
   end
   

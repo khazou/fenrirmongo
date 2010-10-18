@@ -1,5 +1,6 @@
 <h1><%= @gallery.title %></h1>
 
+<ul>
 <%= render :partial => "gallery", :collection => @gallery.pictures %>
-
-<%= link_to "Ajouter une photo", new_gallery_picture_path(@gallery) if current_user.admin? %>
+</ul>
+<%= link_to "Ajouter une photo", new_gallery_picture_path(@gallery) if current_user and current_user.admin? %>
