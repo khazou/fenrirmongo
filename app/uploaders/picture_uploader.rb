@@ -19,6 +19,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   version :mini do
     process :resize_to_fill => [200, 150]
   end
+  
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
