@@ -13,6 +13,7 @@ gem "carrierwave"
 gem "devise"
 gem "spreadsheet"
 gem "rmagick"
+gem "cloudfiles"
 # Use unicorn as the web server
 # gem 'unicorn'
 
