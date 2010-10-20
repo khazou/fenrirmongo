@@ -12,7 +12,7 @@ gem "mongoid", "2.0.0.beta.18"
 gem "carrierwave"
 gem "devise"
 gem "spreadsheet"
-gem "rmagick", "1.15.17"
+gem "rmagick"
 # Use unicorn as the web server
 # gem 'unicorn'
 
